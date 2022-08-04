@@ -68,9 +68,22 @@ function generatePassword() {
     //math.floor will round to an integer after multiplying a random number between 0 and 1 to the value assigned to the choiceArr
     var randomCharacter = Math.floor(Math.random()*choiceArray.length);
     //password is redefined 
-    password = Password + choiceArray[randomCharacter];
+    password = password + choiceArray[randomCharacter];
   }
   return password;
+}
+
+
+
+//copy to clipboard
+var generateBtn = document.querySelector("#copy");
+generateBtn.addEventListener("click", copyToClipboard);
+
+
+function copyToClipboard() {
+  var copyText = document.getElementById("copy");
+
+  alert("I wish I worked :(")
 }
 
 

@@ -7,3 +7,6 @@ Usage Instructions:
     c. "Include special characters?".  This will allow or prohibit special characters from apperaing in the generated password.
     d. "Include numberical characters?".  This will allow or prohibit numberical characters from apperaing in the generated password.
 3. Enjoy your randomly generated password 😎
+
+GitHub link: https://github.com/danielc53/Random-Password-Generation
+Deployed URL: 

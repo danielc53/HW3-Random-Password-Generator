@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 var characterLength = [];
 
 //empty array for storing prompt choices
-var choiceArray = [];
+var choice = [];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -15,25 +15,22 @@ function writePassword() {
   //if checkPrompts returns true, generate new password
   var validPrompts = checkPrompts();
   if (validPrompts) {
-    var newPassword = generatePassword();
+    var Password = generatePassword();
     var passwordText = document.querySelector("#password");
-    passwordText.value = newPassword;
+    passwordText.value = Password;
   } 
-  else {
-    passwordText.value = "";
-  }
 }
 
 //ALL CHARACTERS AVAILABLE FOR PASSWORD GENERATION
-var specialCharArray = ['!','@','#','$','%','^','&','*','(',')','_','+','?','<','\'','>',':','{',',','}','[',']','`','~','|','_','\\','\"','\''];
-var lowerCaseArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperCaseArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specialChar = ['!','@','#','$','%','^','&','*','(',')','_','+','?','<','\'','>',':','{',',','}','[',']','`','~','|','_','\\','\"','\''];
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
 function checkPrompts(){
   //redefine choiceArr to 'clear' the string if any value has been applied to it previously
-  choiceArray = [];
+  choice = [];
   characterLength = prompt("Pick a password length between 8 and 128 characters (numbers ONLY)");
 
   //prompt will only accept an integer value between 8 and 128
@@ -43,19 +40,19 @@ function checkPrompts(){
   }
 
   if (confirm("Include lowercase characters?")) {
-    choiceArray = choiceArray.concat(lowerCaseArray);
+    choice = choice.concat(lowerCase);
   }
 
   if (confirm("Include uppercase characters?")) {
-    choiceArray = choiceArray.concat(upperCaseArray);
+    choice = choice.concat(upperCase);
   }
 
   if (confirm("Include special characters?")) {
-    choiceArr = choiceArray.concat(specialCharArray);
+    choice = choice.concat(specialChar);
   }
 
   if (confirm("Include numerical characters?")) {
-    choiceArray = choiceArray.concat(numberArray);
+    choice = choice.concat(number);
   }
   return true;
 }
@@ -65,10 +62,10 @@ function generatePassword() {
   var password = "";
   //keep repeating fucntion until the specified characterLength criteria is met
   for(var i = 0; i < characterLength; i++) {
-    //math.floor will round to an integer after multiplying a random number between 0 and 1 to the value assigned to the choiceArr
-    var randomCharacter = Math.floor(Math.random()*choiceArray.length);
+    //math.floor will round to an integer after multiplying a random number between 0 and 1 to the value assigned to the choice
+    var randomCharacter = Math.floor(Math.random()*choice.length);
     //password is redefined 
-    password = password + choiceArray[randomCharacter];
+    password = password + choice[randomCharacter];
   }
   return password;
 }
@@ -85,6 +82,11 @@ function copyToClipboard() {
 
   alert("I wish I worked :(")
 }
+
+
+
+
+
 
 
 

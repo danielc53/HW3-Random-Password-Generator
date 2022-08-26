@@ -8,5 +8,5 @@ Usage Instructions:
     d. "Include numberical characters?".  This will allow or prohibit numberical characters from apperaing in the generated password.
 3. Enjoy your randomly generated password 😎
 
-GitHub link: https://github.com/danielc53/HW3-Random-Password-Generator
-Deployed URL: https://danielc53.github.io/HW3-Random-Password-Generator/
+GitHub link: https://github.com/danielc53/hw3-Random-Password-Generator
+Deployed URL: https://danielc53.github.io/hw3-Random-Password-Generator/
